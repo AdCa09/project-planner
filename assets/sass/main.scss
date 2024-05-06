@@ -3,54 +3,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-body{
-
+body {
+    background-color: $backgroundColor;
+    font-family: $fontFamily;
+    color: $textColor;
+    display: flex;
+    flex-direction: column;
     main {
+      section {
         position: relative;
+        left: calc(9% - 0px);
+        top: 2em;
+        margin: 2.5em 0em 2.5em;
+        border: 0.2em solid $otherColor;
+        border-radius: 3em;
+        width: 30em;
+        height: 30vh;
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
-        overflow-x: hidden;
-        background-color: $backgroundColor;
-    
-        section {
-            border: 0.2em solid $otherColor;
-            border-radius: 10%;
-            width: 70%;
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
-            align-items: center;
-            justify-content: flex-start;
-            box-shadow: 0 0 10px $otherColor;
-            box-shadow: 10 10 10px rgb(255, 255, 255);
-            background-size: cover;
-            background-position: center;
-            background-color: $cartColor;
-    
-            #todo {
-                display: flex;
-                flex-direction: column;
-            }
-    
-            #doing {
-                display: flex;
-                flex-direction: column;
-            }
-    
-            #done {
-                background: $cartColor;
-                display: flex;
-                flex-direction: column;
-            }
+        align-items: center;
+        box-shadow: 0 0 10px $otherColor;
+        box-shadow: 10 10 10px rgb(255, 255, 255);
+        background-color: $cartColor;
+  
+        #todo {
+          background-color: $otherColor;
+  
+          width: 10em;
+          display: flex;
+          flex-direction: column;
         }
-
-}
-
-}
-
-@media screen and (min-width: 768px) {
+  
+        #doing {
+          display: flex;
+          flex-direction: column;
+        }
+  
+        #done {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    nav {
+      button {
+        display: flex;
+        border: none;
+        background-color: $otherColor;
+        color: $textColor;
+        border-radius: 5%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      #displayAll {
+        position: relative;
+      }
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
     body {
       display: flex !important;
       flex-direction: column !important;
@@ -60,13 +72,18 @@ body{
       flex: 1 1 0%;
       width: 100% !important;
       margin: 0 auto;
-
+  
+    //   section {
+    //     // height: 90vh;
+    //   }
+  
       .app-container {
         display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         width: 100% !important;
         height: max-content;
+      }
     }
-} 
-} 
-
+    // button {
+    // }
+  }
