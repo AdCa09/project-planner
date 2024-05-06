@@ -35,4 +35,14 @@ body header #addTask {
 body header #addTask:hover {
   background-color: rgba(242, 204, 143, 0.7137254902);
   transition: background-color ease-in-out 300ms;
+}
+body footer {
+  text-align: center;
+  position: relative;
+  bottom: -100%;
+  background-color: #BCD6D7;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(51, 65, 85);
 }/*# sourceMappingURL=header-footer.css.map */

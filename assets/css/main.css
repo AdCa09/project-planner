@@ -17,8 +17,8 @@ body main {
 body main section {
   border: 0.2em solid #BCD6D7;
   border-radius: 10%;
-  width: 14em;
-  height: 42vh;
+  width: 70%;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -42,4 +42,23 @@ body main section #done {
   background: white;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  main {
+    flex: 1 1 0%;
+    width: 100% !important;
+    margin: 0 auto;
+  }
+  main .app-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    height: -moz-max-content;
+    height: max-content;
+  }
 }/*# sourceMappingURL=main.css.map */

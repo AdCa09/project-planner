@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const description = document.getElementById("taskDescription");
     const select = document.getElementById("taskStatus");
     const dateChoice = document.getElementById("taskDueDate");
-    const toDo = document.getElementById("toDo"); 
+    const toDo = document.getElementById("toDo");
 
     // Vérification des champs, s'ils sont tous remplis
     if (
