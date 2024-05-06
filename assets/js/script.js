@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Création d'un nouvel élément pour la tâche
     const taskElement = document.createElement("div");
     taskElement.className = "task";
+    taskElement.classList.add("darkmode"); // Ajout de la classe "darkmode"
+
     taskElement.innerHTML = `
       <h2>${name.value}</h2>
       <p>Description: ${description.value}</p>
@@ -60,11 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Invalid task status");
         return;
     }
-
-    // Ajout de la tâche à la liste appropriée
     taskList.appendChild(taskElement);
-
-    // Message d'alerte
+    
     alert("Great, your task has been created!");
 
     // Réinitialisation des valeurs des champs du formulaire
