@@ -25,7 +25,6 @@ section {
     height: 42vh;
     display: flex;
     flex-direction: column;
-    margin: 10px;
     align-items: center;
     justify-content: flex-start;
     box-shadow: 0 0 10px $otherColor;
@@ -33,6 +32,7 @@ section {
     background-size: cover;
     background-position: center;
     background-color: $cartColor;
+
 }
 
 #todo {
@@ -46,7 +46,7 @@ section {
 }
 
 #done {
-    background: $cartColor;
+
     display: flex;
     flex-direction: column;
 }
