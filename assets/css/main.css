@@ -3,4 +3,52 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(51, 65, 85);
+  background-color: aliceblue;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+section {
+  border: 0.2em solid #BCD6D7;
+  border-radius: 10%;
+  width: 14em;
+  height: 42vh;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 0 10px #BCD6D7;
+  box-shadow: 10 10 10px rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+}
+
+#todo {
+  display: flex;
+  flex-direction: column;
+}
+
+#doing {
+  display: flex;
+  flex-direction: column;
+}
+
+#done {
+  background: white;
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
