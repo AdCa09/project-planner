@@ -1,1 +1,1 @@
-{"version":3,"sources":["../sass/reset.scss","reset.css"],"names":[],"mappings":"AAEA;EACI,UAAA;EACA,SAAA;EACA,sBAAA;ACDJ","file":"reset.css"}
+{"version":3,"sources":["../sass/reset.scss","../sass/variables.scss","reset.css"],"names":[],"mappings":"AAEA;EACI,UAAA;EACA,SAAA;EACA,sBAAA;EACA,sBCJQ;ACGZ","file":"reset.css"}
