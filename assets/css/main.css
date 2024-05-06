@@ -3,4 +3,43 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: rgb(51, 65, 85);
+}
+
+body main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: aliceblue;
+}
+body main section {
+  border: 0.2em solid #BCD6D7;
+  border-radius: 10%;
+  width: 14em;
+  height: 42vh;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 0 10px #BCD6D7;
+  box-shadow: 10 10 10px rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+}
+body main section #todo {
+  display: flex;
+  flex-direction: column;
+}
+body main section #doing {
+  display: flex;
+  flex-direction: column;
+}
+body main section #done {
+  background: white;
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
