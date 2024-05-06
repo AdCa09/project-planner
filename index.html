@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="./assets/css/form.css">
     <title>Project Planner</title>
     <script type="module" src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/darkmode.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Project planner</h1>
+    <header class="darkmode">
+      <h1 class="darkmode">Project planner</h1>
+      <button id="darkmodeBtn"></button>
       <!-- <button id="addTask">Add task</button> -->
     </header>
     <main>
         <nav>
-            <button id="displayAll">All</button>
+            <button id="displayAll ">All</button>
             <button id="displayToDo">To do</button>
             <button id="displayDoing">Doing</button>
             <button id="displayDone">Done</button>
@@ -25,21 +27,25 @@
           </nav>
 
           <div class="app-container">
-          <section id="toDo">
-            <h2>To do</h2>
+          <section id="toDo" class="darkmode">
+            <h2 class="darkmode">To do</h2>
           </section>
-          <section id="doing"><h2>Doing</h2></section>
-          <section id="done"><h2>Done</h2></section>
+          <section id="doing" class="darkmode">
+            <h2 class="darkmode">Doing</h2>
+          </section>
+          <section id="done" class="darkmode">
+            <h2 class="darkmode">Done</h2>
+          </section>
         </div>
 
           <!-- <button id="closeButton">Close</button> -->
           <form action="#"  class="form">
-            <h3>Add a new task</h3>
-            <label for="name">Name:</label>
+            <h3 class="darkmode">Add a new task</h3>
+            <label for="name" class="darkmode">Name:</label>
             <input type="text" name="name" id="taskName" />
-            <label for="description">Description:</label>
+            <label for="description" class="darkmode">Description:</label>
             <textarea name="description" id="taskDescription" rows="4"></textarea>
-            <label for="status">Status:</label>
+            <label for="status" class="darkmode">Status:</label>
             <select name="status" id="taskStatus">
               <option value="null">Select a status</option>
               <option value="toDo">To do</option>
