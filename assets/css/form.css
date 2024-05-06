@@ -5,36 +5,44 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: aliceblue;
-}
-body header {
+body main .form {
+  width: 25%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
+  gap: 10px;
+  border: 1px solid black;
+  margin-bottom: 10px;
 }
-body header h1 {
-  font-size: 40px;
-  font-weight: 700;
-  color: rgb(51, 65, 85);
+body main .form h3 {
+  font-size: 20px;
+  font-weight: 500;
 }
-body header #addTask {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
+body main .form #taskStatus {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #F2CC8F;
+  border: none;
+  border-radius: 5px;
   padding: 5px 8px;
   color: rgb(51, 65, 85);
-  font-weight: 500;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 10px;
-  background-color: #F2CC8F;
-  transition: background-color ease-in-out 300ms;
 }
-body header #addTask:hover {
+body main .form #taskSubmit {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #F2CC8F;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: rgb(51, 65, 85);
+  transition: background-color ease-in-out 300ms;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body main .form #taskSubmit:hover {
   background-color: rgba(242, 204, 143, 0.7137254902);
   transition: background-color ease-in-out 300ms;
-}/*# sourceMappingURL=header-footer.css.map */
+}/*# sourceMappingURL=form.css.map */
