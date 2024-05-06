@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const description = document.getElementById("taskDescription");
     const select = document.getElementById("taskStatus");
     const dateChoice = document.getElementById("taskDueDate");
-    const toDo = document.getElementById("toDo");
 
     // Vérification des champs, s'ils sont tous remplis
     if (
@@ -26,8 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Création d'un nouvel élément pour la tâche
     const taskElement = document.createElement("div");
-
-    // Contenu HTML de la tâche
     taskElement.innerHTML = `
       <h2>${name.value}</h2>
       <p>Description: ${description.value}</p>
@@ -35,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <p>Date d'échéance: ${dateChoice.value} in ${diffDay} days</p>
     `;
 
-    // Création d'un bouton "Delete" pour la tâche
+    // Création d'un bouton Delete pour la tâche
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", function () {
@@ -43,11 +40,27 @@ document.addEventListener("DOMContentLoaded", function () {
       taskElement.remove();
     });
 
-    // Ajout du bouton "Delete" à la tâche
     taskElement.appendChild(deleteButton);
 
-    // Ajout de la tâche à l'élément "toDo"
-    toDo.appendChild(taskElement);
+    // Sélection de la liste appropriée en fonction du statut de la tâche
+    let taskList;
+    switch (select.value) {
+      case "toDo":
+        taskList = document.getElementById("toDo");
+        break;
+      case "doing":
+        taskList = document.getElementById("doing");
+        break;
+      case "done":
+        taskList = document.getElementById("done");
+        break;
+      default:
+        alert("Invalid task status");
+        return;
+    }
+
+    // Ajout de la tâche à la liste appropriée
+    taskList.appendChild(taskElement);
 
     // Message d'alerte
     alert("Great, your task has been created!");
