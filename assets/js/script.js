@@ -71,3 +71,46 @@ document.addEventListener("DOMContentLoaded", function () {
     select.value = "null";
   });
 });
+
+  // On cible les boutons
+  const buttonAll = document.getElementById("displayAll");
+  const buttonToDo = document.getElementById("displayToDo");
+  const buttonDoing = document.getElementById("displayDoing");
+  const buttonDone = document.getElementById("displayDone");
+
+  const toDoSection = document.getElementById("toDo");
+  const doingSection = document.getElementById("doing");
+  const doneSection = document.getElementById("done");
+
+  // Events listeners pour créer le filtre
+  buttonToDo.addEventListener("click", () => {
+    doingSection.style.display = "none";
+    doneSection.style.display = "none";
+    toDoSection.style.display = "flex";
+    toDoSection.style.gridColumnStart = 2;
+  });
+
+  buttonDoing.addEventListener("click", () => {
+    toDoSection.style.display = "none";
+    doneSection.style.display = "none";
+    doingSection.style.display = "flex";
+    doingSection.style.gridColumnStart = 2;
+  });
+
+  buttonDone.addEventListener("click", () => {
+    toDoSection.style.display = "none";
+    doingSection.style.display = "none";
+    doneSection.style.display = "flex";
+    doneSection.style.gridColumnStart = 2;
+  });
+
+  buttonAll.addEventListener("click", () => {
+    toDoSection.style.display = "flex";
+    doingSection.style.display = "flex";
+    doneSection.style.display = "flex";
+    toDoSection.style.gridColumnStart = 1;
+    doneSection.style.gridColumnStart = 3;
+  });
+
+  
+
