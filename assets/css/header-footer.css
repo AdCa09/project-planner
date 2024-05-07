@@ -20,22 +20,6 @@ body header h1 {
   font-weight: 700;
   color: rgb(51, 65, 85);
 }
-body header #addTask {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  padding: 5px 8px;
-  color: rgb(51, 65, 85);
-  font-weight: 500;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 10px;
-  background-color: #F2CC8F;
-  transition: background-color ease-in-out 300ms;
-}
-body header #addTask:hover {
-  background-color: rgba(242, 204, 143, 0.7137254902);
-  transition: background-color ease-in-out 300ms;
-}
 body footer {
   text-align: center;
   position: relative;
