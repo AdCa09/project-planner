@@ -121,7 +121,6 @@ body nav button:not(:disabled) {
   }
   main button {
     border-radius: 2em 2em 2em 2em;
-    margin-right: 5em;
     position: relative;
     width: 7em;
     justify-content: center;
