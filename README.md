@@ -22,8 +22,9 @@ Le Project Planner est une application web interactive conçue pour vous aider �
 
 ## ✍️ Auteur
 
-- Projet développé par [Justine](https://github.com/Justine-Frigo).
-- Projet développé par [Angel](https://github.com/Angelea22).
-- Projet développé par [Adrien](https://github.com/AdCa09).
+- Projet développé par:
+-  [Justine](https://github.com/Justine-Frigo).
+-  [Angel](https://github.com/Angelea22).
+-  [Adrien](https://github.com/AdCa09).
 
 ![GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXlpdWt2MXR5Y3lqbnZ6ZDc4bG11cXJ0azQ2MmplMzQ1azk3aWFkNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btTIqXYcKdGhNSM/giphy.gif)
