@@ -19,27 +19,22 @@ body main section {
   margin: 2.5em 0em 2.5em;
   border: 0.2em solid #BCD6D7;
   border-radius: 3em;
-  width: 30em;
-  height: 30vh;
+  width: 80%;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   background-color: white;
 }
-body main section #todo {
+body main section h2 {
   background-color: #BCD6D7;
-  width: 10em;
-  display: flex;
-  flex-direction: column;
-}
-body main section #doing {
-  display: flex;
-  flex-direction: column;
-}
-body main section #done {
-  display: flex;
-  flex-direction: column;
+  width: 20.5em;
+  line-height: 3.5em;
+  transform: translate(0em, -1em);
+  height: 3em;
+  text-align: center;
+  border-radius: 2em 2em 0em 0em;
 }
 body nav {
   display: flex;
@@ -78,7 +73,7 @@ body nav button {
   will-change: transform, opacity;
 }
 body nav button:hover {
-  background: #f6f9fe;
+  background: #ffffff;
 }
 body nav button:active {
   box-shadow: 0 4px 4px 0 #BCD6D7, 0 8px 12px 6px #BCD6D7;
@@ -106,6 +101,7 @@ body nav button:not(:disabled) {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-left: 19em;
   }
   main .app-container {
     display: grid !important;
@@ -114,15 +110,15 @@ body nav button:not(:disabled) {
     height: -moz-max-content;
     height: max-content;
   }
-  nav {
+  main nav {
     margin-left: 10em;
   }
-  button {
+  main button {
     border-radius: 2em 2em 2em 2em;
-    margin-right: 3em;
+    margin-right: 5em;
     position: relative;
     width: 7em;
     justify-content: center;
-    left: calc(15% - 0em);
+    left: calc(0.6% - 0em);
   }
 }/*# sourceMappingURL=main.css.map */
