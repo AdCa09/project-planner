@@ -15,6 +15,9 @@ body header {
   background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
 }
+body header button {
+  cursor: pointer;
+}
 body header h1 {
   font-size: 40px;
   font-weight: 700;

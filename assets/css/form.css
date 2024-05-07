@@ -34,6 +34,7 @@ body main .form #taskStatus {
   border-radius: 5px;
   padding: 5px 8px;
   color: rgb(51, 65, 85);
+  cursor: pointer;
 }
 body main .form #taskSubmit {
   font-size: 14px;

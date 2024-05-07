@@ -125,5 +125,6 @@ body nav button:not(:disabled) {
     width: 7em;
     justify-content: center;
     left: calc(0.6% - 0em);
+    cursor: pointer;
   }
 }/*# sourceMappingURL=main.css.map */

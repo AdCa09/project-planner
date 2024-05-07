@@ -12,6 +12,10 @@ body{
         background-color: $otherColor;
         font-family: $fontFamily;
 
+        button{
+            cursor: pointer;
+        }
+
         h1{
             font-size: 40px;
             font-weight: 700;
