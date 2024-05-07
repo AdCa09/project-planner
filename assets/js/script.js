@@ -29,12 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
     taskElement.className = "task";
     taskElement.classList.add("darkmode"); // Ajout de la classe "darkmode"
 
+    // Créer les éléments enfants avec leur contenu
     taskElement.innerHTML = `
-      <h2>${name.value}</h2>
-      <p>Description: ${description.value}</p>
-      <p>Statut: ${select.options[select.selectedIndex].text}</p>
-      <p class="due-date">${dateChoice.value} in ${diffDay} days</p>
+    <h2>${name.value}</h2>
+    <p>Description: ${description.value}</p>
+    <p>Statut: ${select.options[select.selectedIndex].text}</p>
+    <p class="due-date">${dateChoice.value} in ${diffDay} days</p>
     `;
+
+    // Ajouter la classe darkmode à tous les éléments enfants
+    taskElement.querySelectorAll("*").forEach(function (element) {
+      element.classList.add("darkmode");
+    });
 
     // Création d'un bouton Delete pour la tâche
     const deleteButton = document.createElement("button");
@@ -63,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
     taskList.appendChild(taskElement);
-    
+
     alert("Great, your task has been created!");
 
     // Réinitialisation des valeurs des champs du formulaire

@@ -8,7 +8,7 @@ let doing = document.getElementById("doing");
 let done = document.getElementById("done");
 let isDarkMode = false;
 let main = document.querySelector("main");
-
+let footer = document.querySelector("footer");
 button.addEventListener("click", function () {
   if (isDarkMode) {
     for (let i = 0; i < darkmode.length; i++) {
@@ -18,16 +18,18 @@ button.addEventListener("click", function () {
       doing.style.backgroundColor = "";
       done.style.backgroundColor = "";
       header.style.backgroundColor = "";
+      footer.style.backgroundColor = "";
     }
     isDarkMode = false;
   } else {
     for (let i = 0; i < darkmode.length; i++) {
       darkmode[i].style.color = "white";
-      main.style.backgroundColor = "black";
-      toDo.style.backgroundColor = "black";
-      doing.style.backgroundColor = "black";
-      done.style.backgroundColor = "black";
-      header.style.backgroundColor = "black";
+      main.style.backgroundColor = "#676767";
+      toDo.style.backgroundColor = "#676767";
+      doing.style.backgroundColor = "#676767";
+      done.style.backgroundColor = "#676767";
+      header.style.backgroundColor = "#676767";
+      footer.style.backgroundColor = "#676767";
     }
     isDarkMode = true;
   }
