@@ -13,6 +13,7 @@ button.addEventListener("click", function () {
   if (isDarkMode) {
     for (let i = 0; i < darkmode.length; i++) {
       darkmode[i].style.color = "";
+      darkmode[i].style.backgroundColor = "";
       main.style.backgroundColor = "";
       toDo.style.backgroundColor = "";
       doing.style.backgroundColor = "";
@@ -24,6 +25,7 @@ button.addEventListener("click", function () {
   } else {
     for (let i = 0; i < darkmode.length; i++) {
       darkmode[i].style.color = "white";
+      darkmode[i].style.backgroundColor = "#676767";
       main.style.backgroundColor = "#676767";
       toDo.style.backgroundColor = "#676767";
       doing.style.backgroundColor = "#676767";
