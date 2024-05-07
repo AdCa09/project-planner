@@ -10,26 +10,29 @@ body {
     display: flex;
     flex-direction: column;
     main {
+      
       section {
         position: relative;
         left: calc(9% - 2.5em);
         margin: 2.5em 0em 2.5em;
         border: 0.2em solid $otherColor;
         border-radius: 3em;
-        width: 30em;
-        height: 30vh;
+        width: 80%;
+        min-height: 30vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         background-color: $cartColor;
+
+        
   
         #todo {
           background-color: $otherColor;
-  
           width: 10em;
           display: flex;
           flex-direction: column;
+          overflow-y: scroll;
         }
   
         #doing {
@@ -122,6 +125,7 @@ body {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         width: 100% !important;
         height: max-content;
+        
       }
     }
 
