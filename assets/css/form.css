@@ -7,7 +7,7 @@
 }
 
 body main .form {
-  width: 25%;
+  width: 50%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -46,4 +46,11 @@ body main .form #taskSubmit {
 body main .form #taskSubmit:hover {
   background-color: rgba(242, 204, 143, 0.7137254902);
   transition: background-color ease-in-out 300ms;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 25% !important;
+    margin: auto !important;
+  }
 }/*# sourceMappingURL=form.css.map */

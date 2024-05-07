@@ -6,7 +6,7 @@
 body{
     main{
         .form{
-            width: 25%;
+            width: 50%;
             margin: auto;
             display: flex;
             flex-direction: column;
@@ -50,5 +50,12 @@ body{
             }
            }
         }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .form{
+        width: 25% !important;
+        margin: auto !important;
     }
 }
