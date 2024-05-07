@@ -10,12 +10,13 @@
     <title>Project Planner</title>
     <script type="module" src="./assets/js/script.js" defer></script>
     <script type="module" src="./assets/js/darkmode.js" defer></script>
+    <script src="./assets/js/displayBtn.js" defer></script>
   </head>
   <body>
     <header class="darkmode">
       <h1 class="darkmode">Project planner</h1>
       <button id="darkmodeBtn"></button>
-      <!-- <button id="addTask">Add task</button> -->
+      <button id="addTask">Add task</button>
     </header>
     <main>
       <nav>
@@ -41,7 +42,7 @@
       </div>
 
       <!-- <button id="closeButton">Close</button> -->
-      <form action="#" class="form">
+      <form action="#" class="form display">
         <h3 class="darkmode">Add a new task</h3>
         <label for="name" class="darkmode">Name:</label>
         <input type="text" name="name" id="taskName" />
