@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             form.style.visibility = 'hidden';
             form.style.opacity = '0'; 
-            form.style.height = '0'; 
+            form.style.height = 'auto'; 
             form.style.padding = '0';
+
             display = true;
         }
     });
