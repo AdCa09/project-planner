@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <link rel="stylesheet" href="assets/css/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,40 +15,36 @@
   </head>
   <body>
     <header class="darkmode">
-        <h1 class="darkmode">Project planner</h1>
-        <button id="darkmodeBtn"><img src="./assets/images/moon-svgrepo-com.svg" alt="moon" width="10px"
-                height="10px"></button>
-
+      <h1 class="darkmode">Project planner</h1>
+      <button id="darkmodeBtn"></button>
+      <button id="addTask">Add task</button>
     </header>
     <main>
-        <div id="taskBtn">
-            <button id="addTask">Add task</button>
-        </div>
-        <nav>
+      <nav>
+        
+        <button id="displayAll" class="darkmode">All</button>
+        <button id="displayToDo" class="darkmode">To do</button>
+        <button id="displayDoing" class="darkmode">Doing</button>
+        <button id="displayDone" class="darkmode">Done</button>
+        <button id="sortByDueDate" class="darkmode">Sort by due date</button>
+        
+      </nav>
 
+      <div class="app-container">
+        <section id="toDo" class="darkmode">
+          <h2 class="darkmode">To do</h2>
+        </section>
+        <section id="doing" class="darkmode">
+          <h2 class="darkmode">Doing</h2>
+        </section>
+        <section id="done" class="darkmode">
+          <h2 class="darkmode">Done</h2>
+        </section>
+      </div>
 
-            <button id="displayAll" class="darkmode">All</button>
-            <button id="displayToDo" class="darkmode">To do</button>
-            <button id="displayDoing" class="darkmode">Doing</button>
-            <button id="displayDone" class="darkmode">Done</button>
-            <button id="sortByDueDate" class="darkmode">Sort by due date</button>
-
-        </nav>
-
-        <div class="app-container">
-            <section id="toDo" class="darkmode">
-                <h2 class="darkmode">To do</h2>
-            </section>
-            <section id="doing" class="darkmode">
-                <h2 class="darkmode">Doing</h2>
-            </section>
-            <section id="done" class="darkmode">
-                <h2 class="darkmode">Done</h2>
-            </section>
-        </div>
-
-      <button id="closeButton">Close</button>
+      
       <form action="#" class="form display">
+        <button id="closeButton">Close</button>
         <h3 class="darkmode">Add a new task</h3>
         <label for="name" class="darkmode">Name:</label>
         <input type="text" name="name" id="taskName" />
@@ -67,6 +62,6 @@
         <button type="submit" id="taskSubmit">Create task</button>
       </form>
     </main>
-    <footer class="darkmode">&copy; Adrien, Angel, Justine</footer>
+    <footer class="darkmode">&copy; <a class="darkmode" href="https://github.com/AdCa09?tab=repositories" target="_blank">Adrien <i class="darkmode" class="fa-brands fa-github"></i></a> <a class="darkmode" href="https://github.com/Angelea22?tab=repositories" target="_blank">Angel <i class="darkmode" class="fa-brands fa-github"></i></a> <a class="darkmode" href="https://github.com/Justine-Frigo?tab=repositories" target="_blank">Justine <i class="darkmode" class="fa-brands fa-github"></i></a></footer>
   </body>
 </html>
