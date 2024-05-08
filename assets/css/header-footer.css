@@ -8,12 +8,18 @@
 
 body header {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
   background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
+}
+body header #darkmodeBtn {
+  padding: 8px;
+  border-radius: 16px;
+  padding: 9px;
+  border: 0.2em solid #BCD6D7;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 body header button {
   cursor: pointer;

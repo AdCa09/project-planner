@@ -13,6 +13,22 @@ body {
   display: flex;
   flex-direction: column;
 }
+body main #taskBtn {
+  text-align: center;
+}
+body main #taskBtn #addTask {
+  text-transform: capitalize;
+  padding: 10px;
+  border: 0.2em solid #BCD6D7;
+  border-radius: 18px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+body main #taskBtn #addTask:active {
+  transform: scale(0.9);
+}
 body main .app-container {
   display: flex;
   flex-direction: column;
@@ -117,7 +133,7 @@ body nav button:not(:disabled) {
     height: max-content;
   }
   main nav {
-    margin-left: 10em;
+    margin-left: 4em;
   }
   main button {
     border-radius: 2em 2em 2em 2em;
