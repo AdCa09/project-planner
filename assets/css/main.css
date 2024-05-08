@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 body main .app-container {
   display: flex;
@@ -113,7 +114,6 @@ body nav button:not(:disabled) {
     width: 100% !important;
     height: -moz-max-content;
     height: max-content;
-    margin-left: 50px;
   }
   main nav {
     margin-left: 10em;
@@ -125,5 +125,8 @@ body nav button:not(:disabled) {
     justify-content: center;
     left: calc(0.6% - 0em);
     cursor: pointer;
+  }
+  main #taskSubmit {
+    margin-right: 14px;
   }
 }/*# sourceMappingURL=main.css.map */

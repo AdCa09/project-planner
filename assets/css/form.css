@@ -6,17 +6,15 @@
   color: rgb(51, 65, 85);
 }
 
-body {
-  position: relative;
-}
 body .task {
   width: 50%;
   padding: 5px 8px;
   background-color: #BCD6D7;
   margin-top: 10px;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
-body .task h2 {
+body .task h3 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
