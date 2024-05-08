@@ -18,11 +18,10 @@ body {
     }
 
     #darkmodeBtn {
-      padding: 8px;
-      border-radius: 16px;
-      padding: 9px;
-      // background-color: white;
-      border: 0.2em solid #bcd6d7;
+      padding: 5px 8px;
+      border-radius: 10px;
+      border: 1px solid $redColor;
+      background-color: $cartColor;
       box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     }
   }

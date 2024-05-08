@@ -21,10 +21,10 @@ body header h1 {
   color: rgb(51, 65, 85);
 }
 body header #darkmodeBtn {
-  padding: 8px;
-  border-radius: 16px;
-  padding: 9px;
-  border: 0.2em solid #bcd6d7;
+  padding: 5px 8px;
+  border-radius: 10px;
+  border: 1px solid #DC493A;
+  background-color: white;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
