@@ -1,7 +1,3 @@
-import {Get, Set} from "./LocalStorage.js";
-Get();
-Set();
-
 document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("taskSubmit");
   submitButton.addEventListener("click", function (event) {
@@ -187,5 +183,3 @@ buttonAll.addEventListener("click", () => {
   toDoSection.style.gridColumnStart = 1;
   doneSection.style.gridColumnStart = 3;
 });
-
-
