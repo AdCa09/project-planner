@@ -25,8 +25,6 @@ body header h1 {
 }
 body footer {
   text-align: center;
-  position: relative;
-  bottom: -100%;
   background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
   font-size: 16px;

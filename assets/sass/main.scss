@@ -9,6 +9,7 @@ body {
     color: $textColor;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     main {
 
       .app-container{
@@ -19,7 +20,7 @@ body {
       }
       
       section {
-        position: relative;
+        // position: relative;
         left: calc(9% - 2.5em);
         margin: 2.5em 0em 2.5em;
         border: 0.2em solid $otherColor;
@@ -110,13 +111,12 @@ body {
     main {
       flex: 1 1 0%;
       width: 100% !important;
-      margin: 0 auto;
+      // margin: 0 auto;
   
       section {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        margin-left: 19em;
       }
   
       .app-container {
@@ -124,6 +124,7 @@ body {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         width: 100% !important;
         height: max-content;
+        margin-left: 50px;
         
       }
       nav {
