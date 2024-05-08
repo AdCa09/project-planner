@@ -55,6 +55,7 @@ body .form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
 body .form h3 {
   font-size: 20px;
