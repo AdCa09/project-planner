@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskElement = document.createElement("div");
     taskElement.className = "task";
     taskElement.classList.add("darkmode"); // Ajout de la classe "darkmode"
+    taskElement.draggable = true;
 
     // Créer les éléments enfants avec leur contenu
     taskElement.innerHTML = `
     <h3>${name.value}</h3>
     <p>Description: ${description.value}</p>
-    <p>Statut: ${select.options[select.selectedIndex].text}</p>
     <p class="due-date">${dateChoice.value} in ${diffDay} days</p>
     `;
 
