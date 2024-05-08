@@ -70,11 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
     taskElement.classList.add("darkmode"); // Ajout de la classe "darkmode"
     taskElement.draggable = true;
 
+    // Calcul du temps restant
+    const diffDays = calculateDaysUntilDue(task.dueDate);
+    const dueDateText = `${task.dueDate} (${diffDays} days left)`;
+
     // Créer les éléments enfants avec leur contenu
     taskElement.innerHTML = `
     <h3>${task.name}</h3>
     <p>Description: ${task.description}</p>
-    <p class="due-date">${task.dueDate}</p>
+    <p class="due-date">${dueDateText}</p>
     `;
 
     // Ajouter la classe darkmode à tous les éléments enfants
@@ -98,6 +102,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let taskList = getContainerByStatus(task.status);
     taskList.appendChild(taskElement);
   }
+
+  // Fonction pour calculer les jours restants jusqu'à la date d'échéance
+  function calculateDaysUntilDue(dueDate) {
+    const currentDate = new Date();
+    const dateChoiceDate = new Date(dueDate);
+    const diffMili = dateChoiceDate.getTime() - currentDate.getTime();
+    return Math.ceil(diffMili / (1000 * 60 * 60 * 24));
+  }
+
+
+});
+
 
   // Fonction pour trier les tâches par date d'échéance
   const sortByDueDateButton = document.getElementById("sortByDueDate");
@@ -187,4 +203,4 @@ document.addEventListener("DOMContentLoaded", function () {
     toDoSection.style.gridColumnStart = 1;
     doneSection.style.gridColumnStart = 3;
   });
-});
+
