@@ -16,7 +16,12 @@ body {
   min-height: 100vh;
   position: relative;
 }
-body main #addTask {
+body main #taskBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #taskBtn #addTask {
   text-transform: capitalize;
   padding: 10px;
   border: 0.2em solid #bcd6d7;
