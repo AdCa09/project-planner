@@ -99,8 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     taskList.appendChild(taskElement);
   }
 
-  // Reste du code...
-
   // Fonction pour trier les tâches par date d'échéance
   const sortByDueDateButton = document.getElementById("sortByDueDate");
   sortByDueDateButton.addEventListener("click", () => {
