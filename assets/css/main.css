@@ -16,6 +16,16 @@ body {
   min-height: 100vh;
   position: relative;
 }
+body main #addTask {
+  text-transform: capitalize;
+  padding: 10px;
+  border: 0.2em solid #bcd6d7;
+  border-radius: 18px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
 body main .app-container {
   display: flex;
   flex-direction: column;
@@ -104,12 +114,12 @@ body nav button:not(:disabled) {
     flex: 1 1 0%;
     width: 100% !important;
   }
-  main section {
+  section {
     overflow: hidden;
     display: flex;
     flex-direction: column;
   }
-  main .app-container {
+  .app-container {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     width: 100% !important;
@@ -117,10 +127,10 @@ body nav button:not(:disabled) {
     height: -moz-max-content;
     height: max-content;
   }
-  main nav {
+  nav {
     margin-left: 10em;
   }
-  main button {
+  button {
     border-radius: 2em 2em 2em 2em;
     position: relative;
     width: 7em;
@@ -128,7 +138,7 @@ body nav button:not(:disabled) {
     left: calc(0.6% - 0em);
     cursor: pointer;
   }
-  main #taskSubmit {
+  #taskSubmit {
     margin-right: 14px;
   }
 }/*# sourceMappingURL=main.css.map */
