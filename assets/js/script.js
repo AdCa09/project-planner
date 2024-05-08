@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Fonction pour charger les tâches depuis le stockage local
+  function loadTasksFromLocalStorage() {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.forEach(task => {
+      addTaskToDOM(task);
+    });
+  }
+
+  // Fonction pour enregistrer les tâches dans le stockage local
+  function saveTasksToLocalStorage() {
+    const tasks = Array.from(document.querySelectorAll('.task')).map(taskElement => ({
+      name: taskElement.querySelector('h3').textContent,
+      description: taskElement.querySelector('p').textContent.replace('Description: ', ''),
+      dueDate: taskElement.querySelector('.due-date').textContent.split(" in ")[0],
+      status: taskElement.parentNode.id
+    }));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  // Charger les tâches depuis le stockage local au chargement de la page
+  loadTasksFromLocalStorage();
+
   const submitButton = document.getElementById("taskSubmit");
   submitButton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -6,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const description = document.getElementById("taskDescription");
     const select = document.getElementById("taskStatus");
     const dateChoice = document.getElementById("taskDueDate");
-
 
     // Vérification des champs, s'ils sont tous remplis
     if (
@@ -19,13 +40,30 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const currentDate = new Date();
-    const dateChoiceValue = dateChoice.value;
-    const dateChoiceDate = new Date(dateChoiceValue);
-    const diffMili = dateChoiceDate.getTime() - currentDate.getTime();
-    const diffDay = Math.ceil(diffMili / (1000 * 60 * 60 * 24));
+    // Créer un objet tâche
+    const task = {
+      name: name.value,
+      description: description.value,
+      dueDate: dateChoice.value,
+      status: select.value
+    };
 
+    // Ajouter la tâche au DOM
+    addTaskToDOM(task);
 
+    // Enregistrer les tâches dans le stockage local
+    saveTasksToLocalStorage();
+
+    alert("Great, your task has been created!");
+
+    // Réinitialisation des valeurs des champs du formulaire
+    name.value = "";
+    description.value = "";
+    select.value = "null";
+  });
+
+  // Fonction pour ajouter une tâche au DOM
+  function addTaskToDOM(task) {
     // Création d'un nouvel élément pour la tâche
     const taskElement = document.createElement("div");
     taskElement.className = "task";
@@ -34,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Créer les éléments enfants avec leur contenu
     taskElement.innerHTML = `
-    <h3>${name.value}</h3>
-    <p>Description: ${description.value}</p>
-    <p class="due-date">${dateChoice.value} in ${diffDay} days</p>
+    <h3>${task.name}</h3>
+    <p>Description: ${task.description}</p>
+    <p class="due-date">${task.dueDate}</p>
     `;
 
     // Ajouter la classe darkmode à tous les éléments enfants
@@ -50,138 +88,105 @@ document.addEventListener("DOMContentLoaded", function () {
     deleteButton.addEventListener("click", function () {
       // Supprime la tâche parente de ce bouton
       taskElement.remove();
+      // Enregistrer les tâches dans le stockage local après suppression
+      saveTasksToLocalStorage();
     });
 
     taskElement.appendChild(deleteButton);
 
     // Sélection de la liste appropriée en fonction du statut de la tâche
-    let taskList;
-    switch (select.value) {
-      case "toDo":
-        taskList = document.getElementById("toDo");
-        break;
-      case "doing":
-        taskList = document.getElementById("doing");
-        break;
-      case "done":
-        taskList = document.getElementById("done");
-        break;
-      default:
-        alert("Invalid task status");
-        return;
-    }
+    let taskList = getContainerByStatus(task.status);
     taskList.appendChild(taskElement);
-
-    alert("Great, your task has been created!");
-
-    // Réinitialisation des valeurs des champs du formulaire
-    name.value = "";
-    description.value = "";
-    select.value = "null";
-  });
-});
-
-function getContainerByStatus(status) {
-  switch (status) {
-    case "toDo":
-      return document.getElementById("toDo");
-    case "doing":
-      return document.getElementById("doing");
-    case "done":
-      return document.getElementById("done");
-    default:
-      return null;
   }
-}
 
-const sortByDueDateButton = document.getElementById("sortByDueDate");
-sortByDueDateButton.addEventListener("click", () => {
-  const statuses = ["toDo", "doing", "done"];
+  // Reste du code...
 
-  statuses.forEach((status) => {
-    const getContainerByStatus = (status) => {
-      switch (status) {
-        case "toDo":
-          return document.getElementById("toDo");
-        case "doing":
-          return document.getElementById("doing");
-        case "done":
-          return document.getElementById("done");
-        default:
-          return null;
-      }
-    };
+  // Fonction pour trier les tâches par date d'échéance
+  const sortByDueDateButton = document.getElementById("sortByDueDate");
+  sortByDueDateButton.addEventListener("click", () => {
+    const statuses = ["toDo", "doing", "done"];
 
-    const container = getContainerByStatus(status);
-    console.log(container);
-    const tasks = Array.from(container.querySelectorAll(".task"));
-    console.log(tasks);
+    statuses.forEach((status) => {
+      const container = getContainerByStatus(status);
+      const tasks = Array.from(container.querySelectorAll(".task"));
 
-    tasks.sort((taskElement1, taskElement2) => {
-      const dueDateText1 = taskElement1.querySelector(".due-date");
-      const dueDateText2 = taskElement2.querySelector(".due-date");
-      console.log(dueDateText1.textContent);
+      tasks.sort((taskElement1, taskElement2) => {
+        const dueDateText1 = taskElement1.querySelector(".due-date");
+        const dueDateText2 = taskElement2.querySelector(".due-date");
 
-      if (dueDateText1 && dueDateText2) {
-        const dueDate1 = new Date(dueDateText1.textContent.split(" in ")[0]);
-        console.log(dueDate1);
-        const dueDate2 = new Date(dueDateText2.textContent.split(" in ")[0]);
-        console.log(dueDate2);
-        return dueDate1 - dueDate2;
-      } else if (!dueDateText1 && dueDateText2) {
-        // Si seulement la première tâche n'a pas de date, la placer après
-        return 1;
-      } else if (dueDateText1 && !dueDateText2) {
-        // Si seulement la deuxième tâche n'a pas de date, la placer avant
-        return -1;
-      } else {
-        return 0; // Si aucune des tâches n'a de date, conserver l'ordre actuel
-      }
-    });
+        if (dueDateText1 && dueDateText2) {
+          const dueDate1 = new Date(dueDateText1.textContent.split(" in ")[0]);
+          const dueDate2 = new Date(dueDateText2.textContent.split(" in ")[0]);
+          return dueDate1 - dueDate2;
+        } else if (!dueDateText1 && dueDateText2) {
+          // Si seulement la première tâche n'a pas de date, la placer après
+          return 1;
+        } else if (dueDateText1 && !dueDateText2) {
+          // Si seulement la deuxième tâche n'a pas de date, la placer avant
+          return -1;
+        } else {
+          return 0; // Si aucune des tâches n'a de date, conserver l'ordre actuel
+        }
+      });
 
-    // Réinsérer les tâches triées dans la section
-    tasks.forEach((taskElement) => {
-      container.appendChild(taskElement);
+      // Réinsérer les tâches triées dans la section
+      tasks.forEach((taskElement) => {
+        container.appendChild(taskElement);
+      });
     });
   });
-});
 
-// On cible les boutons
-const buttonAll = document.getElementById("displayAll");
-const buttonToDo = document.getElementById("displayToDo");
-const buttonDoing = document.getElementById("displayDoing");
-const buttonDone = document.getElementById("displayDone");
+  // Fonction pour sélectionner le conteneur en fonction du statut de la tâche
+  function getContainerByStatus(status) {
+    switch (status) {
+      case "toDo":
+        return document.getElementById("toDo");
+      case "doing":
+        return document.getElementById("doing");
+      case "done":
+        return document.getElementById("done");
+      default:
+        return null;
+    }
+  }
 
-const toDoSection = document.getElementById("toDo");
-const doingSection = document.getElementById("doing");
-const doneSection = document.getElementById("done");
+  // On cible les boutons
+  const buttonAll = document.getElementById("displayAll");
+  const buttonToDo = document.getElementById("displayToDo");
+  const buttonDoing = document.getElementById("displayDoing");
+  const buttonDone = document.getElementById("displayDone");
 
-// Events listeners pour créer le filtre
-buttonToDo.addEventListener("click", () => {
-  doingSection.style.display = "none";
-  doneSection.style.display = "none";
-  toDoSection.style.display = "flex";
-  toDoSection.style.gridColumnStart = 2;
-});
+  const toDoSection = document.getElementById("toDo");
+  const doingSection = document.getElementById("doing");
+  const doneSection = document.getElementById("done");
 
-buttonDoing.addEventListener("click", () => {
-  toDoSection.style.display = "none";
-  doneSection.style.display = "none";
-  doingSection.style.display = "flex";
-  doingSection.style.gridColumnStart = 2;
-});
+  // Events listeners pour créer le filtre
+  buttonToDo.addEventListener("click", () => {
+    doingSection.style.display = "none";
+    doneSection.style.display = "none";
+    toDoSection.style.display = "flex";
+    toDoSection.style.gridColumnStart = 2;
+  });
 
-buttonDone.addEventListener("click", () => {
-  toDoSection.style.display = "none";
-  doingSection.style.display = "none";
-  doneSection.style.display = "flex";
-  doneSection.style.gridColumnStart = 2;
-});
+  buttonDoing.addEventListener("click", () => {
+    toDoSection.style.display = "none";
+    doneSection.style.display = "none";
+    doingSection.style.display = "flex";
+    doingSection.style.gridColumnStart = 2;
+  });
 
-buttonAll.addEventListener("click", () => {
-  toDoSection.style.display = "flex";
-  doingSection.style.display = "flex";
-  doneSection.style.display = "flex";
-  toDoSection.style.gridColumnStart = 1;
-  doneSection.style.gridColumnStart = 3;
+  buttonDone.addEventListener("click", () => {
+    toDoSection.style.display = "none";
+    doingSection.style.display = "none";
+    doneSection.style.display = "flex";
+    doneSection.style.gridColumnStart = 2;
+  });
+
+  buttonAll.addEventListener("click", () => {
+    toDoSection.style.display = "flex";
+    doingSection.style.display = "flex";
+    doneSection.style.display = "flex";
+    toDoSection.style.gridColumnStart = 1;
+    doneSection.style.gridColumnStart = 3;
+  });
 });
