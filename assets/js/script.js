@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const select = document.getElementById("taskStatus");
     const dateChoice = document.getElementById("taskDueDate");
 
+
     // Vérification des champs, s'ils sont tous remplis
     if (
       name.value.trim() === "" ||
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateChoiceDate = new Date(dateChoiceValue);
     const diffMili = dateChoiceDate.getTime() - currentDate.getTime();
     const diffDay = Math.ceil(diffMili / (1000 * 60 * 60 * 24));
+
 
     // Création d'un nouvel élément pour la tâche
     const taskElement = document.createElement("div");
