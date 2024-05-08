@@ -15,22 +15,20 @@ body header {
   background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
 }
-body header #darkmodeBtn {
-  padding: 8px;
-  border-radius: 16px;
-  padding: 9px;
-  border: 0.2em solid #BCD6D7;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-body header button {
-  cursor: pointer;
-}
 body header h1 {
   font-size: 40px;
   font-weight: 700;
   color: rgb(51, 65, 85);
 }
-body footer {
+body header #darkmodeBtn {
+  padding: 8px;
+  border-radius: 16px;
+  padding: 9px;
+  border: 0.2em solid #bcd6d7;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+footer {
   text-align: center;
   background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
@@ -38,6 +36,6 @@ body footer {
   font-weight: 500;
   color: rgb(51, 65, 85);
 }
-body footer i {
+footer i {
   margin-right: 10px;
 }/*# sourceMappingURL=header-footer.css.map */
