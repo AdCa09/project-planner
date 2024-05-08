@@ -12,9 +12,9 @@
     <script type="module" src="./assets/js/script.js" defer></script>
     <script type="module" src="./assets/js/darkmode.js" defer></script>
     <script src="./assets/js/displayBtn.js" defer></script>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/0e39d36e41.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
     <header class="darkmode">
         <h1 class="darkmode">Project planner</h1>
         <button id="darkmodeBtn"><img src="./assets/images/moon-svgrepo-com.svg" alt="moon" width="10px"
@@ -48,26 +48,25 @@
             </section>
         </div>
 
-        <button id="closeButton">Close</button>
-        <form action="#" class="form display">
-            <h3 class="darkmode">Add a new task</h3>
-            <label for="name" class="darkmode">Name:</label>
-            <input type="text" name="name" id="taskName" />
-            <label for="description" class="darkmode">Description:</label>
-            <textarea id="taskDescription" name="description" rows="4"></textarea>
-            <label for="status" class="darkmode">Status:</label>
-            <select id="taskStatus" name="status">
-                <option value="null">Select a status</option>
-                <option value="toDo">To do</option>
-                <option value="doing">Doing</option>
-                <option value="done">Done</option>
-            </select>
-            <label for="dueDate">Due date:</label>
-            <input type="date" id="taskDueDate" name="dueDate" />
-            <button type="submit" id="taskSubmit">Create task</button>
-        </form>
+      <button id="closeButton">Close</button>
+      <form action="#" class="form display">
+        <h3 class="darkmode">Add a new task</h3>
+        <label for="name" class="darkmode">Name:</label>
+        <input type="text" name="name" id="taskName" />
+        <label for="description" class="darkmode">Description:</label>
+        <textarea id="taskDescription" name="description" rows="4"></textarea>
+        <label for="status" class="darkmode">Status:</label>
+        <select id="taskStatus" name="status">
+          <option value="null">Select a status</option>
+          <option value="toDo">To do</option>
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+        </select>
+        <label for="dueDate">Due date:</label>
+        <input type="date" id="taskDueDate" name="dueDate" />
+        <button type="submit" id="taskSubmit">Create task</button>
+      </form>
     </main>
     <footer class="darkmode">&copy; Adrien, Angel, Justine</footer>
-</body>
-
+  </body>
 </html>

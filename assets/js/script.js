@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Créer les éléments enfants avec leur contenu
     taskElement.innerHTML = `
-    <h2>${name.value}</h2>
+    <h3>${name.value}</h3>
     <p>Description: ${description.value}</p>
     <p>Statut: ${select.options[select.selectedIndex].text}</p>
     <p class="due-date">${dateChoice.value} in ${diffDay} days</p>

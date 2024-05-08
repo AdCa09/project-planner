@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   color: rgb(51, 65, 85);
+  text-decoration: none;
 }
 
 body header {
@@ -31,11 +32,12 @@ body header h1 {
 }
 body footer {
   text-align: center;
-  position: relative;
-  bottom: -100%;
   background-color: #BCD6D7;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: rgb(51, 65, 85);
+}
+body footer i {
+  margin-right: 10px;
 }/*# sourceMappingURL=header-footer.css.map */
