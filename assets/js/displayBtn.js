@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let display = false;
     let close = document.getElementById('closeButton');
 
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (event) {
+        event.preventDefault();
         if (!display) {
             form.style.visibility = 'visible';
             form.style.opacity = '1';
@@ -14,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    close.addEventListener('click', function () {
+    close.addEventListener('click', function (event) {
+        event.preventDefault();
         form.style.visibility = 'hidden';
         form.style.opacity = '0';
         form.style.height = 'auto';
