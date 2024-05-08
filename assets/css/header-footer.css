@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   color: rgb(51, 65, 85);
+  text-decoration: none;
 }
 
 body header {
@@ -30,4 +31,7 @@ body footer {
   font-size: 16px;
   font-weight: 500;
   color: rgb(51, 65, 85);
+}
+body footer i {
+  margin-right: 10px;
 }/*# sourceMappingURL=header-footer.css.map */
