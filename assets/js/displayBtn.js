@@ -3,29 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
     let form = document.querySelector('form');
     let display = false;
     let close = document.getElementById('closeButton');
-    
-    btn.addEventListener('click', function(){
+
+    btn.addEventListener('click', function () {
         if (!display) {
             form.style.visibility = 'visible';
-            form.style.opacity = '1'; 
-            form.style.height = 'auto'; 
-            form.style.padding = '20px'; 
+            form.style.opacity = '1';
+            form.style.height = 'auto';
+            form.style.padding = '20px';
             display = true;
         }
-        // else {
-        //     form.style.visibility = 'hidden';
-        //     form.style.opacity = '0'; 
-        //     form.style.height = 'auto'; 
-        //     form.style.padding = '0';
-        //     display = false;
-        // }
     });
-    
-    close.addEventListener('click', function(){
+
+    close.addEventListener('click', function () {
         form.style.visibility = 'hidden';
-        form.style.opacity = '0'; 
-        form.style.height = 'auto'; 
+        form.style.opacity = '0';
+        form.style.height = 'auto';
         form.style.padding = '0';
         display = false;
+
+
+        form.reset();
     });
 });
