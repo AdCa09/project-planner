@@ -4,7 +4,7 @@
  * @param {Valeur initial, si aucune n'est present c'est celle qui sera stocker de base (Array,number,string,object,...): exemple ( Jean-mich )} ini
  * @returns 
  */
-export function Get(name, ini) {
+function Get(name, ini) {
     let data = localStorage.getItem(name);
 
     if (data !== null) {
@@ -21,7 +21,7 @@ export function Get(name, ini) {
  * @param {Valeur a stocker (Array,number,string,object,...): exemple ( Jean-mich )} value 
  * @returns 
  */
-export function Set(name, value) {
+function Set(name, value) {
     localStorage.setItem(name, JSON.stringify(value));
     return JSON.parse(localStorage.getItem(name));
 }
